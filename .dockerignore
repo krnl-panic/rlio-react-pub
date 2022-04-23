@@ -1,0 +1,12 @@
+# Ignore everything
+**
+
+# ... except for dependencies and source
+!.env
+!.babelrc
+!public/
+!src/
+!webpack/
+!dist/
+!yarn.lock
+!package.json

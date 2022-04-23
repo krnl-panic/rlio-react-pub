@@ -1,0 +1,25 @@
+# docker-compose.yml
+version: "3.8"
+
+networks:
+  raidleader:
+    name: raidleader
+
+services:
+  server:
+    image: "us-east4-docker.pkg.dev/raidleader-io/useast-raidleader-io-docker/rlio-react:dev"
+    container_name: raidleader-io
+    build:
+      context: .
+      args:
+        - DISCORD_CLIENT_ID=$DISCORD_CLIENT_ID
+        - DISCORD_CLIENT_SECRET=$DISCORD_CLIENT_SECRET
+        - DISCORD_REDIRECT_URI=$DISCORD_REDIRECT_URI
+    hostname: raidleader-io
+    networks:
+      - raidleader
+    ports:
+      - "3000:3000"
+    restart: always
+    environment:
+      - PORT=3000
