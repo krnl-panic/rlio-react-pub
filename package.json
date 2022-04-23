@@ -1,0 +1,20 @@
+{
+  "name": "raidleader.io",
+  "version": "1.0.0",
+  "description": "SSR React for raidleader.io",
+  "main": "app/index.js",
+  "scripts": {
+    "deploy": "gcloud beta functions deploy raidleader-io-react-1_0_0 --entry-point handler --trigger-http --stage-bucket medium-post-functions --memory=2048MB"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://admin@raidleader.io@source.developers.google.com:2022/p/raidleader-io/r/rlio-react"
+  },
+  "author": "Michael Fay",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "dependencies": {
+    "next": "^12.1.5",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
